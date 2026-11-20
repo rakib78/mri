@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>230,000 Tickets. 3 Brands. Zero Data Loss. Here's How We Did It. | Rakibul Islam</title>
+<meta name="description" content="When Resilia needed to consolidate three Freshdesk instances — and 230,000+ tickets across three distinct brands — into a single Zendesk environment, they needed more than an import tool. They needed a custom API migration system. Here's the full story.">
+<meta name="keywords" content="Freshdesk to Zendesk migration, CRM migration, helpdesk migration, ticket migration, Zendesk migration consultant, API migration, zero data loss migration, Freshdesk Zendesk, support migration Auckland">
+<meta name="author" content="Md Rakibul Islam">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mrakibulislam.com/blog/freshdesk-to-zendesk-migration.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mrakibulislam.com/blog/freshdesk-to-zendesk-migration.html">
+<meta property="og:title" content="230,000 Tickets. 3 Brands. Zero Data Loss. Here's How We Did It.">
+<meta property="og:description" content="When Resilia needed to consolidate three Freshdesk instances into Zendesk, an import tool wasn't going to cut it. Here's the custom API migration story.">
+<meta property="og:image" content="https://mrakibulislam.com/images/og-blog-migration.jpg">
+<meta property="article:author" content="Md Rakibul Islam">
+<meta property="article:published_time" content="2026-02-18">
+<meta property="article:tag" content="Zendesk">
+<meta property="article:tag" content="Migration">
+<meta property="article:tag" content="CRM">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="230,000 Tickets. 3 Brands. Zero Data Loss.">
+<meta name="twitter:description" content="The full story of migrating three Freshdesk instances into one Zendesk — using a custom-built API migration system.">
+<meta name="twitter:image" content="https://mrakibulislam.com/images/og-blog-migration.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "230,000 Tickets. 3 Brands. Zero Data Loss. Here's How We Did It.",
+  "description": "When Resilia needed to consolidate three Freshdesk instances and 230,000+ tickets into a single Zendesk environment, they needed a custom API migration system. Here's the full story.",
+  "author": { "@type": "Person", "name": "Md Rakibul Islam", "url": "https://mrakibulislam.com" },
+  "publisher": { "@type": "Person", "name": "Md Rakibul Islam", "url": "https://mrakibulislam.com" },
+  "datePublished": "2026-02-18",
+  "url": "https://mrakibulislam.com/blog/freshdesk-to-zendesk-migration.html",
+  "keywords": ["Zendesk", "Freshdesk", "CRM migration", "helpdesk migration", "API migration", "ticket migration"]
+}
+</script>
+
+<link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/images/site.webmanifest">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N41GCC5HKW"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N41GCC5HKW');</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root{--bg:#0d0d0d;--bg2:#111111;--bg3:#161616;--panel:#1a1a1a;--border:rgba(255,255,255,0.08);--white:#f0eeeb;--silver:#9ca3af;--smoke:#6b7280;--accent:#D4AF37;--accent2:#E8C84B;--glow:rgba(212,175,55,0.18);--glow2:rgba(212,175,55,0.07);--btn-text:#000;--nav-h:68px;--max:1200px;--r:8px;--display:'Montserrat',sans-serif;--body-f:'Lato',sans-serif;--trans:color 0.4s ease-in-out,background 0.4s ease-in-out,border-color 0.4s ease-in-out,box-shadow 0.4s ease-in-out;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:var(--body-f);background:var(--bg);color:var(--silver);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{color:var(--accent);text-decoration:none;transition:var(--trans);}
+a:hover{color:var(--accent2);}
+::selection{background:var(--accent);color:#000;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px;}
+#mainNav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:var(--bg);border-bottom:1px solid var(--border);transition:background .4s;}
+#mainNav.scrolled{background:rgba(13,13,13,.95);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem);height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:2rem;}
+.nav-logo{font-family:var(--display);font-size:1.05rem;font-weight:800;color:var(--white);letter-spacing:.04em;}
+.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+.nav-links a{font-family:var(--display);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--smoke);position:relative;padding-bottom:2px;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--accent);transition:width .3s;}
+.nav-links a:hover{color:var(--white);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{font-family:var(--display);font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.58rem 1.35rem;background:var(--accent);color:var(--btn-text);border-radius:4px;transition:background .3s,transform .2s;}
+.nav-cta:hover{background:var(--accent2);transform:translateY(-1px);color:#000;}
+.mob-toggle{display:none;background:none;border:none;cursor:pointer;padding:.3rem;}
+.mob-toggle span{display:block;width:22px;height:1.5px;background:var(--silver);margin:5px 0;border-radius:2px;}
+.mob-nav{display:none;position:fixed;inset:0;background:var(--bg);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:2rem;}
+.mob-nav.open{display:flex;}
+.mob-nav a{font-family:var(--display);font-size:1.4rem;font-weight:700;color:var(--white);}
+.mob-nav a:hover{color:var(--accent);}
+.mob-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:var(--smoke);font-size:1.5rem;cursor:pointer;}
+.blog-hero{padding-top:calc(var(--nav-h) + 5rem);padding-bottom:4rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.blog-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 20% 30%,rgba(212,175,55,.04) 0%,transparent 65%),radial-gradient(ellipse 40% 40% at 80% 70%,rgba(212,175,55,.025) 0%,transparent 60%);pointer-events:none;}
+.blog-hero .wrap{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem);}
+.blog-breadcrumb{display:flex;align-items:center;gap:.5rem;font-family:var(--display);font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--smoke);margin-bottom:2rem;}
+.blog-breadcrumb a{color:var(--smoke);}
+.blog-breadcrumb a:hover{color:var(--accent);}
+.blog-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem;}
+.blog-tag{font-family:var(--display);font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(212,175,55,.08);color:var(--accent);border:1px solid rgba(212,175,55,.2);padding:.28rem .75rem;border-radius:3px;}
+.blog-title{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,5vw,3rem);line-height:1.15;letter-spacing:-.01em;color:var(--white);margin-bottom:1.25rem;}
+.blog-subtitle{font-size:1.1rem;color:var(--silver);line-height:1.75;margin-bottom:2.5rem;max-width:680px;font-style:italic;}
+.blog-meta{display:flex;align-items:center;flex-wrap:wrap;gap:1.25rem;padding-top:1.75rem;border-top:1px solid var(--border);}
+.blog-author{display:flex;align-items:center;gap:.85rem;}
+.blog-avatar{width:44px;height:44px;border-radius:50%;background:var(--panel);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:.82rem;font-weight:800;color:var(--accent);flex-shrink:0;overflow:hidden;}
+.blog-avatar img{width:100%;height:100%;object-fit:cover;}
+.blog-author-name{font-family:var(--display);font-size:.82rem;font-weight:700;color:var(--white);line-height:1.3;}
+.blog-author-role{font-size:.72rem;color:var(--smoke);margin-top:.1rem;}
+.blog-meta-divider{width:1px;height:28px;background:var(--border);}
+.blog-meta-item{font-family:var(--display);font-size:.68rem;font-weight:600;letter-spacing:.06em;color:var(--smoke);display:flex;align-items:center;gap:.4rem;}
+.blog-cover{width:100%;max-width:820px;margin:0 auto;aspect-ratio:16/7;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
+.blog-cover-svg{width:100%;height:100%;}
+.article-layout{display:grid;grid-template-columns:1fr 220px;gap:4rem;max-width:1100px;margin:0 auto;padding:3.5rem clamp(1.25rem,5vw,3rem) 6rem;align-items:start;}
+.article-content{min-width:0;}
+.article-sidebar{position:sticky;top:calc(var(--nav-h) + 2rem);}
+.toc{background:var(--panel);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;}
+.toc-label{font-family:var(--display);font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--smoke);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--border);}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:.1rem;}
+.toc-list a{font-family:var(--display);font-size:.72rem;font-weight:500;color:var(--smoke);display:block;padding:.4rem .5rem;border-radius:4px;line-height:1.4;transition:var(--trans);}
+.toc-list a:hover,.toc-list a.active{color:var(--accent);background:var(--glow2);}
+.share-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;margin-top:1.25rem;}
+.share-label{font-family:var(--display);font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--smoke);margin-bottom:1rem;}
+.share-btns{display:flex;flex-direction:column;gap:.5rem;}
+.share-btn{display:flex;align-items:center;gap:.65rem;font-family:var(--display);font-size:.68rem;font-weight:600;color:var(--smoke);background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:.55rem .75rem;transition:var(--trans);cursor:pointer;}
+.share-btn:hover{color:var(--white);border-color:var(--accent);background:var(--glow2);}
+.prose h2{font-family:var(--display);font-size:clamp(1.25rem,3vw,1.6rem);font-weight:700;color:var(--white);line-height:1.25;letter-spacing:-.01em;margin:3rem 0 1.1rem;padding-top:.5rem;}
+.prose h2:first-child{margin-top:0;}
+.prose p{font-size:1.05rem;color:var(--silver);line-height:1.85;margin-bottom:1.5rem;}
+.prose strong{color:var(--white);font-weight:700;}
+.prose em{font-style:italic;}
+.prose ul{margin:1.5rem 0 1.5rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;}
+.prose ul li{font-size:1rem;color:var(--silver);line-height:1.75;}
+.prose blockquote{margin:2.5rem 0;padding:1.75rem 2rem;background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0;position:relative;}
+.prose blockquote p{font-family:var(--display);font-size:1.1rem;font-weight:600;color:var(--white);line-height:1.6;margin:0;font-style:italic;}
+.prose blockquote::before{content:'"';position:absolute;top:-.5rem;left:1.5rem;font-family:var(--display);font-size:4rem;font-weight:800;color:var(--accent);opacity:.25;line-height:1;}
+.callout{background:var(--glow2);border:1px solid rgba(212,175,55,.18);border-radius:var(--r);padding:1.5rem 1.75rem;margin:2.5rem 0;}
+.callout-label{font-family:var(--display);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem;}
+.callout p{font-size:.95rem;color:var(--silver);line-height:1.75;margin:0;}
+.callout ul{margin:.65rem 0 0 1.25rem;display:flex;flex-direction:column;gap:.4rem;}
+.callout ul li{font-size:.92rem;color:var(--silver);line-height:1.7;}
+.section-rule{border:none;border-top:1px solid var(--border);margin:3rem 0;}
+/* Stat blocks */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2.5rem 0;}
+.stat-block{background:var(--panel);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;text-align:center;}
+.stat-block .num{font-family:var(--display);font-size:2rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:.35rem;}
+.stat-block .desc{font-family:var(--display);font-size:.65rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--smoke);line-height:1.4;}
+/* Code block */
+.code-block{background:var(--bg3);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:1.5rem;margin:2rem 0;overflow-x:auto;}
+.code-block pre{font-family:'Courier New',monospace;font-size:.82rem;color:var(--silver);line-height:1.7;white-space:pre-wrap;}
+.code-block .code-label{font-family:var(--display);font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.85rem;}
+/* Phase timeline */
+.phase-list{display:flex;flex-direction:column;gap:1px;margin:2.5rem 0;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
+.phase-item{display:grid;grid-template-columns:120px 1fr;gap:0;background:var(--panel);}
+.phase-item:hover{background:var(--bg3);}
+.phase-label{padding:1.2rem 1.4rem;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;}
+.phase-label .phase-num{font-family:var(--display);font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.2rem;}
+.phase-label .phase-time{font-family:var(--display);font-size:.7rem;font-weight:600;color:var(--white);}
+.phase-body{padding:1.2rem 1.4rem;}
+.phase-title{font-family:var(--display);font-size:.85rem;font-weight:700;color:var(--white);margin-bottom:.3rem;}
+.phase-desc{font-size:.85rem;color:var(--muted);color:var(--smoke);line-height:1.65;}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--smoke);margin-bottom:3rem;transition:var(--trans);}
+.back-link:hover{color:var(--accent);}
+.back-link svg{transition:transform .2s;}
+.back-link:hover svg{transform:translateX(-3px);}
+.author-bio{margin-top:4rem;padding:2.5rem;background:var(--panel);border:1px solid var(--border);border-radius:var(--r);display:grid;grid-template-columns:auto 1fr;gap:1.75rem;align-items:start;}
+.author-bio-avatar{width:72px;height:72px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:1.4rem;font-weight:800;color:var(--accent);flex-shrink:0;overflow:hidden;}
+.author-bio-avatar img{width:100%;height:100%;object-fit:cover;}
+.author-bio-name{font-family:var(--display);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:.35rem;}
+.author-bio-creds{font-family:var(--display);font-size:.65rem;font-weight:600;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;margin-bottom:.75rem;}
+.author-bio p{font-size:.88rem;color:var(--silver);line-height:1.75;margin-bottom:.75rem;}
+.author-bio-links{display:flex;gap:.65rem;flex-wrap:wrap;margin-top:.25rem;}
+.author-bio-link{font-family:var(--display);font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.4rem .9rem;border-radius:3px;border:1px solid var(--border);color:var(--smoke);transition:var(--trans);}
+.author-bio-link:hover{border-color:var(--accent);color:var(--accent);}
+.author-bio-link.primary{background:var(--accent);color:var(--btn-text);border-color:var(--accent);}
+.author-bio-link.primary:hover{background:var(--accent2);}
+.article-cta{margin-top:2rem;padding:2.5rem;background:linear-gradient(135deg,var(--panel) 0%,var(--bg3) 100%);border:1px solid var(--border);border-top:2px solid var(--accent);border-radius:var(--r);text-align:center;}
+.article-cta h3{font-family:var(--display);font-size:1.2rem;font-weight:800;color:var(--white);margin-bottom:.65rem;line-height:1.3;}
+.article-cta p{font-size:.9rem;color:var(--silver);margin-bottom:1.5rem;line-height:1.7;}
+.article-cta-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;}
+.btn-accent{font-family:var(--display);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.7rem 1.5rem;background:var(--accent);color:var(--btn-text);border-radius:4px;transition:background .3s,transform .2s,box-shadow .3s;display:inline-flex;align-items:center;gap:.5rem;}
+.btn-accent:hover{background:var(--accent2);transform:translateY(-1px);box-shadow:0 4px 20px var(--glow);color:#000;}
+.btn-outline{font-family:var(--display);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.7rem 1.5rem;background:transparent;border:1px solid var(--border);color:var(--smoke);border-radius:4px;transition:var(--trans);display:inline-flex;align-items:center;gap:.5rem;}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);}
+.comments-section{margin-top:3rem;padding-top:3rem;border-top:1px solid var(--border);}
+.comments-heading{font-family:var(--display);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:1.5rem;}
+footer{border-top:1px solid var(--border);padding:3rem 0;}
+.footer-inner{max-width:var(--max);margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+.footer-logo{font-family:var(--display);font-size:1rem;font-weight:800;color:var(--white);}
+.footer-logo span{color:var(--accent);}
+.footer-links{display:flex;gap:1.75rem;list-style:none;flex-wrap:wrap;}
+.footer-links a{font-family:var(--display);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--smoke);transition:var(--trans);}
+.footer-links a:hover{color:var(--accent);}
+.footer-copy{font-family:var(--display);font-size:.6rem;font-weight:500;letter-spacing:.04em;color:var(--smoke);}
+.reading-progress{position:fixed;top:0;left:0;z-index:200;height:2px;background:var(--accent);width:0%;transition:width .1s linear;}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1);}
+.reveal.in{opacity:1;transform:none;}
+@media(max-width:900px){.article-layout{grid-template-columns:1fr;gap:0;}.article-sidebar{display:none;}}
+@media(max-width:768px){.nav-links,.nav-cta{display:none;}.mob-toggle{display:block;}.author-bio{grid-template-columns:1fr;}.blog-meta-divider{display:none;}.stat-row{grid-template-columns:1fr;}.footer-inner{flex-direction:column;align-items:flex-start;}.phase-item{grid-template-columns:1fr;}.phase-label{border-right:none;border-bottom:1px solid var(--border);padding:.9rem 1.4rem;}}
+</style>
+</head>
+<body>
+
+<div class="reading-progress" id="readingProgress"></div>
+
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" onclick="closeMobile()">✕</button>
+  <a href="/#services" onclick="closeMobile()">Services</a>
+  <a href="/#results" onclick="closeMobile()">Results</a>
+  <a href="/#about" onclick="closeMobile()">About</a>
+  <a href="/#pricing" onclick="closeMobile()">Pricing</a>
+  <a href="/#blog" onclick="closeMobile()">Insights</a>
+  <a href="/#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Rakibul<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#results">Results</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#pricing">Pricing</a></li>
+      <li><a href="/#blog">Insights</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <a href="/#contact" class="nav-cta">Book a Call</a>
+    <button class="mob-toggle" onclick="openMobile()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="blog-hero">
+  <div class="wrap">
+    <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>›</span><a href="/#blog">Insights</a><span>›</span><span>Migration</span>
+    </nav>
+    <div class="blog-tags reveal">
+      <span class="blog-tag">Zendesk</span>
+      <span class="blog-tag">Migration</span>
+      <span class="blog-tag">Case Study</span>
+      <span class="blog-tag">API Engineering</span>
+    </div>
+    <h1 class="blog-title reveal" style="transition-delay:.07s">230,000 Tickets. 3 Brands.<br>Zero Data Loss.<br>Here's How We Did It.</h1>
+    <p class="blog-subtitle reveal" style="transition-delay:.13s">When Resilia needed to move three separate Freshdesk instances into a single Zendesk environment, there was no off-the-shelf tool that could do it. So we built one.</p>
+    <div class="blog-meta reveal" style="transition-delay:.18s">
+      <div class="blog-author">
+        <div class="blog-avatar"><img src="/images/rakibul.jpg" alt="Rakibul Islam" onerror="this.style.display='none';this.parentElement.textContent='RI'"></div>
+        <div>
+          <div class="blog-author-name">Md Rakibul Islam</div>
+          <div class="blog-author-role">Zendesk Certified Administrator · CRM Migration Specialist</div>
+        </div>
+      </div>
+      <div class="blog-meta-divider"></div>
+      <div class="blog-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>February 2026</div>
+      <div class="blog-meta-divider"></div>
+      <div class="blog-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>9 min read</div>
+    </div>
+  </div>
+</header>
+
+<div style="background:var(--bg);padding:2.5rem clamp(1.25rem,5vw,3rem) 0;max-width:820px;margin:0 auto;">
+  <div class="blog-cover reveal">
+    <svg class="blog-cover-svg" viewBox="0 0 900 394" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bgM" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0d0d0d"/><stop offset="100%" style="stop-color:#161616"/></linearGradient>
+        <filter id="glowM"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <rect width="900" height="394" fill="url(#bgM)"/>
+      <!-- Three Freshdesk boxes -->
+      <g transform="translate(30,80)">
+        <rect x="0" y="0" width="110" height="65" rx="5" fill="rgba(212,175,55,.08)" stroke="rgba(212,175,55,.25)" stroke-width="1.5"/>
+        <text x="55" y="22" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="700" fill="rgba(212,175,55,.7)" text-anchor="middle" letter-spacing="1">FRESHDESK</text>
+        <text x="55" y="37" font-family="Montserrat,sans-serif" font-size="7" fill="rgba(212,175,55,.5)" text-anchor="middle">Brand A</text>
+        <text x="55" y="52" font-family="Montserrat,sans-serif" font-size="8" font-weight="800" fill="var(--accent)" text-anchor="middle">80K+ tickets</text>
+      </g>
+      <g transform="translate(30,175)">
+        <rect x="0" y="0" width="110" height="65" rx="5" fill="rgba(212,175,55,.08)" stroke="rgba(212,175,55,.25)" stroke-width="1.5"/>
+        <text x="55" y="22" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="700" fill="rgba(212,175,55,.7)" text-anchor="middle" letter-spacing="1">FRESHDESK</text>
+        <text x="55" y="37" font-family="Montserrat,sans-serif" font-size="7" fill="rgba(212,175,55,.5)" text-anchor="middle">Brand B</text>
+        <text x="55" y="52" font-family="Montserrat,sans-serif" font-size="8" font-weight="800" fill="var(--accent)" text-anchor="middle">150K+ tickets</text>
+      </g>
+      <g transform="translate(30,270)">
+        <rect x="0" y="0" width="110" height="65" rx="5" fill="rgba(212,175,55,.08)" stroke="rgba(212,175,55,.25)" stroke-width="1.5"/>
+        <text x="55" y="22" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="700" fill="rgba(212,175,55,.7)" text-anchor="middle" letter-spacing="1">FRESHDESK</text>
+        <text x="55" y="37" font-family="Montserrat,sans-serif" font-size="7" fill="rgba(212,175,55,.5)" text-anchor="middle">Brand C</text>
+        <text x="55" y="52" font-family="Montserrat,sans-serif" font-size="8" font-weight="800" fill="var(--accent)" text-anchor="middle">~15K tickets</text>
+      </g>
+      <!-- Arrows converging to API engine -->
+      <path d="M 140 113 Q 210 113 250 197" fill="none" stroke="rgba(212,175,55,.4)" stroke-width="1.5"/>
+      <path d="M 140 207 Q 200 207 250 207" fill="none" stroke="rgba(212,175,55,.5)" stroke-width="1.5"/>
+      <path d="M 140 302 Q 210 302 250 217" fill="none" stroke="rgba(212,175,55,.4)" stroke-width="1.5"/>
+      <!-- Arrow heads -->
+      <polygon points="244,193 253,197 244,202" fill="rgba(212,175,55,.6)"/>
+      <polygon points="244,203 253,207 244,212" fill="rgba(212,175,55,.7)"/>
+      <polygon points="244,212 253,217 244,222" fill="rgba(212,175,55,.6)"/>
+      <!-- Custom API engine box -->
+      <rect x="260" y="155" width="140" height="85" rx="6" fill="rgba(212,175,55,.06)" stroke="rgba(212,175,55,.5)" stroke-width="2"/>
+      <text x="330" y="182" font-family="Montserrat,sans-serif" font-size="8" font-weight="800" fill="#D4AF37" text-anchor="middle" letter-spacing="1">CUSTOM API</text>
+      <text x="330" y="196" font-family="Montserrat,sans-serif" font-size="8" font-weight="800" fill="#D4AF37" text-anchor="middle" letter-spacing="1">MIGRATION ENGINE</text>
+      <text x="330" y="215" font-family="Montserrat,sans-serif" font-size="7" fill="rgba(212,175,55,.5)" text-anchor="middle">field mapping · rate limit handler</text>
+      <text x="330" y="228" font-family="Montserrat,sans-serif" font-size="7" fill="rgba(212,175,55,.5)" text-anchor="middle">validation · rollback logic</text>
+      <!-- Pulsing dot on engine -->
+      <circle cx="330" cy="155" r="5" fill="#D4AF37" opacity=".6" filter="url(#glowM)"/>
+      <!-- Output arrow -->
+      <path d="M 400 197 Q 460 197 510 197" fill="none" stroke="rgba(212,175,55,.6)" stroke-width="2"/>
+      <polygon points="504,192 514,197 504,203" fill="rgba(212,175,55,.7)"/>
+      <!-- Zendesk destination box -->
+      <rect x="520" y="130" width="150" height="135" rx="6" fill="rgba(100,200,100,.05)" stroke="rgba(100,200,100,.3)" stroke-width="1.5"/>
+      <text x="595" y="160" font-family="Montserrat,sans-serif" font-size="9" font-weight="800" fill="rgba(100,200,100,.8)" text-anchor="middle" letter-spacing="1">ZENDESK</text>
+      <text x="595" y="178" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" fill="rgba(100,200,100,.6)" text-anchor="middle">Unified workspace</text>
+      <!-- Stats inside zendesk box -->
+      <text x="595" y="205" font-family="Montserrat,sans-serif" font-size="11" font-weight="800" fill="#D4AF37" text-anchor="middle" filter="url(#glowM)">230,000+</text>
+      <text x="595" y="220" font-family="Montserrat,sans-serif" font-size="7.5" fill="rgba(100,200,100,.6)" text-anchor="middle">tickets migrated</text>
+      <text x="595" y="240" font-family="Montserrat,sans-serif" font-size="9" font-weight="800" fill="rgba(100,200,100,.9)" text-anchor="middle">ZERO DATA LOSS</text>
+      <text x="595" y="255" font-family="Montserrat,sans-serif" font-size="7" fill="rgba(100,200,100,.5)" text-anchor="middle">3 brands · 1 environment</text>
+      <!-- Bottom label -->
+      <text x="450" y="370" font-family="Montserrat,sans-serif" font-size="8" font-weight="700" fill="rgba(212,175,55,.35)" text-anchor="middle" letter-spacing="2">CUSTOM-BUILT · API-DRIVEN · FULLY VALIDATED</text>
+    </svg>
+  </div>
+</div>
+
+<div class="article-layout">
+  <aside class="article-sidebar" style="order:2">
+    <div class="toc reveal">
+      <div class="toc-label">In this article</div>
+      <ul class="toc-list" id="tocList">
+        <li><a href="#the-problem">The problem: 3 systems, 1 goal</a></li>
+        <li><a href="#why-tools-fail">Why off-the-shelf tools fail</a></li>
+        <li><a href="#building-the-engine">Building the migration engine</a></li>
+        <li><a href="#the-hardest-part">The hardest part nobody talks about</a></li>
+        <li><a href="#the-result">The result — and what changed</a></li>
+        <li><a href="#lessons">What this taught me</a></li>
+      </ul>
+    </div>
+    <div class="share-card reveal" style="transition-delay:.1s">
+      <div class="share-label">Share this article</div>
+      <div class="share-btns">
+        <a class="share-btn" href="https://linkedin.com/sharing/share-offsite/?url=https://mrakibulislam.com/blog/freshdesk-to-zendesk-migration.html" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>Share on LinkedIn
+        </a>
+        <a class="share-btn" href="https://twitter.com/intent/tweet?text=230K+Tickets+3+Brands+Zero+Data+Loss&url=https://mrakibulislam.com/blog/freshdesk-to-zendesk-migration.html" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>Share on X
+        </a>
+        <button class="share-btn" onclick="copyLink()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+          <span id="copyLinkText">Copy link</span>
+        </button>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay:.2s;margin-top:1.25rem;padding:1.5rem;background:var(--glow2);border:1px solid rgba(212,175,55,.15);border-radius:var(--r)">
+      <div style="font-family:var(--display);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem">Planning a migration?</div>
+      <p style="font-size:.78rem;color:var(--silver);line-height:1.65;margin-bottom:1rem">I've migrated 230K+ tickets across complex multi-brand environments. Zero data loss, documented end to end.</p>
+      <a href="/#contact" class="btn-accent" style="width:100%;justify-content:center;font-size:.65rem;display:flex;">Book a discovery call →</a>
+    </div>
+  </aside>
+
+  <article class="article-content" style="order:1">
+    <a href="/#blog" class="back-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back to Insights</a>
+
+    <div class="prose">
+
+      <p>Most helpdesk migrations look simple on paper. You have data here. You want it there. There are tools for that. Job done.</p>
+
+      <p>The Resilia project was not that.</p>
+
+      <p>Resilia — a multi-brand ecommerce operation — had grown organically across three distinct brands, each with its own Freshdesk instance, its own ticket structure, its own custom fields, its own agent hierarchy, and its own years of accumulated customer history. The decision had been made to consolidate everything into a single Zendesk environment. The brief: migrate all of it. Lose none of it. Keep the brands distinct within a unified workspace.</p>
+
+      <p>The total ticket count across three instances came to 230,000+. The largest single instance had over 150,000 tickets. And the data structures between Freshdesk and Zendesk — while superficially similar — were different enough in the details that no existing migration tool could handle the mapping correctly.</p>
+
+      <p>So we built one.</p>
+
+      <div class="stat-row">
+        <div class="stat-block"><div class="num">230K+</div><div class="desc">Total tickets migrated across 3 brands</div></div>
+        <div class="stat-block"><div class="num">3</div><div class="desc">Freshdesk instances consolidated into 1 Zendesk</div></div>
+        <div class="stat-block"><div class="num">0</div><div class="desc">Records lost, corrupted, or misrouted</div></div>
+      </div>
+
+      <hr class="section-rule" id="the-problem">
+
+      <h2>The problem: 3 systems with 3 different structures</h2>
+
+      <p>The first thing I do before any migration is a full structural audit of both the source and the destination. Not just "what data exists" but "how is it organised, what's the underlying logic, and where are the mismatches."</p>
+
+      <p>In this case, the mismatches were significant:</p>
+
+      <p><strong>Custom field schemas didn't align.</strong> Each Freshdesk instance had its own set of custom ticket fields — some shared across brands, some brand-specific, some duplicated under different names. None of them mapped cleanly to Zendesk's field structure. Every field needed to be individually reviewed, mapped, and in some cases transformed before migration.</p>
+
+      <p><strong>Ticket status logic differed.</strong> Freshdesk and Zendesk use different status taxonomies. "Pending" in Freshdesk doesn't map exactly to any single Zendesk status — it depends on whether the ticket is waiting on the requester or the assignee. Automating that mapping required business logic, not just a field lookup.</p>
+
+      <p><strong>Agent and group structures needed rebuilding.</strong> The agent hierarchies in three separate Freshdesk instances needed to be consolidated and rebuilt in Zendesk before tickets could be migrated — because tickets reference agents, and those agents needed to exist in Zendesk first.</p>
+
+      <p><strong>Brand separation within a unified instance.</strong> Zendesk supports multi-brand configurations, but the setup needs to be deliberate. Tickets from Brand A needed to land in Brand A's queue, routed correctly, with Brand A's macros and workflows. Getting that right before migration, not after, was critical.</p>
+
+      <hr class="section-rule" id="why-tools-fail">
+
+      <h2>Why off-the-shelf migration tools fail at this scale</h2>
+
+      <p>There are several commercial migration tools for helpdesk platforms — Help Desk Migration, Trello Data Exporter, platform-native export/import tools. They work well for straightforward single-instance migrations with standard field structures. They fall apart when the complexity increases.</p>
+
+      <p>The specific failure modes I've seen from commercial tools on complex projects:</p>
+
+      <ul>
+        <li>They map fields by name — which breaks immediately when source and destination field names don't match exactly</li>
+        <li>They don't handle API rate limiting gracefully — they hit Zendesk's rate limits, fail silently, and you lose chunks of data without knowing it</li>
+        <li>They don't support custom transformation logic — if status X in system A needs to become status Y or Z in system B depending on a condition, commercial tools can't do that</li>
+        <li>Their error recovery is primitive — a failure mid-migration often means starting over, which at 150,000 tickets is not an option</li>
+        <li>They don't maintain referential integrity — if a ticket references an agent, a group, or a contact that hasn't been created yet in the destination, the migration breaks or the reference gets dropped</li>
+      </ul>
+
+      <blockquote>
+        <p>At 230,000 tickets across three brands, a 1% data loss rate means 2,300 missing records. A 5% rate means 11,500. Those aren't acceptable numbers when those records represent real customer conversations, real support history, real evidence of what was promised and what was resolved.</p>
+      </blockquote>
+
+      <hr class="section-rule" id="building-the-engine">
+
+      <h2>Building the migration engine</h2>
+
+      <p>The solution was a custom API-based migration application — built to handle this specific project, with the flexibility to accommodate the edge cases that always emerge mid-migration.</p>
+
+      <p>The core components:</p>
+
+      <p><strong>Freshdesk API extractor.</strong> Pulls tickets, contacts, agents, groups, and custom field definitions from each Freshdesk instance. Stores them in a structured intermediate format — not imported directly into Zendesk, but staged for validation and transformation first.</p>
+
+      <p><strong>Transformation layer.</strong> This is where the business logic lives. Field mapping rules. Status translation logic. Brand tagging. Agent reference resolution. Every record passes through this layer before it touches Zendesk. Every transformation is logged.</p>
+
+      <p><strong>Validation engine.</strong> Before any batch of records goes to Zendesk, they're validated against the destination schema. Missing required fields get flagged. Agent references that don't resolve get queued for manual review. Records that would fail import get separated out with an error log — not silently dropped.</p>
+
+      <p><strong>Zendesk API writer with rate limit management.</strong> Zendesk's API has per-minute and per-day rate limits. At 230,000 tickets with multiple comments and attachments each, staying within those limits over a multi-day migration required a proper rate limit manager — not just exponential backoff, but an actual queue system that tracked consumption and scheduled batches accordingly.</p>
+
+      <p><strong>Resumable migration state.</strong> Every imported record gets logged with its source ID, destination ID, and import timestamp. If the migration stops for any reason — network interruption, API error, planned maintenance — it resumes from the last successful record. No re-importing, no duplication risk.</p>
+
+      <div class="code-block">
+        <div class="code-label">Migration flow — simplified</div>
+        <pre>
+[Freshdesk API] → Extract tickets (paginated, all 3 instances)
+      ↓
+[Staging DB] → Store raw records with source metadata
+      ↓
+[Transform] → Map fields, resolve agents, apply brand tags, translate status
+      ↓
+[Validate] → Schema check, referential integrity, error flagging
+      ↓
+[Rate Limiter] → Batch scheduler respecting Zendesk API limits
+      ↓
+[Zendesk API] → Import tickets, comments, attachments
+      ↓
+[Audit Log] → Source ID → Destination ID mapping, timestamp, status
+        </pre>
+      </div>
+
+      <hr class="section-rule" id="the-hardest-part">
+
+      <h2>The hardest part nobody talks about</h2>
+
+      <p>Technical architecture aside, the hardest part of any large migration isn't the code. It's the sequence — the order in which things happen.</p>
+
+      <p>You can't import tickets before agents exist. You can't configure routing rules before groups exist. You can't test workflows before tickets exist. Every dependency has to be resolved in the right order, and the right order isn't always obvious until you're three steps in and something breaks.</p>
+
+      <p>The phase sequence we used:</p>
+
+      <div class="phase-list">
+        <div class="phase-item">
+          <div class="phase-label"><div class="phase-num">Phase 01</div><div class="phase-time">Week 1</div></div>
+          <div class="phase-body"><div class="phase-title">Zendesk environment setup</div><div class="phase-desc">Multi-brand configuration, custom fields recreated, agent accounts provisioned, group structure built. The destination has to be fully ready before a single ticket moves.</div></div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-label"><div class="phase-num">Phase 02</div><div class="phase-time">Week 1–2</div></div>
+          <div class="phase-body"><div class="phase-title">Contacts and requesters first</div><div class="phase-desc">All unique requester email addresses extracted from Freshdesk, deduplicated, and imported into Zendesk as users. Tickets reference users — users must exist first.</div></div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-label"><div class="phase-num">Phase 03</div><div class="phase-time">Week 2</div></div>
+          <div class="phase-body"><div class="phase-title">Test migration — 1,000 tickets per brand</div><div class="phase-desc">Migrate a representative sample from each brand. Audit every field. Spot the edge cases. Fix the transformation logic before running the full import.</div></div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-label"><div class="phase-num">Phase 04</div><div class="phase-time">Week 3–4</div></div>
+          <div class="phase-body"><div class="phase-title">Full migration, brand by brand</div><div class="phase-desc">Largest instance (150K+ tickets) goes first — it has the most edge cases, and fixing them early prevents compounding issues. Smaller instances follow.</div></div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-label"><div class="phase-num">Phase 05</div><div class="phase-time">Week 4</div></div>
+          <div class="phase-body"><div class="phase-title">Validation and audit</div><div class="phase-desc">Source record count vs. destination record count for every batch. Spot checks on 500 random tickets per brand. Error log review and remediation. Stakeholder sign-off.</div></div>
+        </div>
+      </div>
+
+      <hr class="section-rule" id="the-result">
+
+      <h2>The result — and what actually changed</h2>
+
+      <p>The migration completed across four weeks. 230,000+ tickets, three brands, full comment histories, attachments, custom field values, agent assignments, and status histories — all moved to Zendesk with zero data loss.</p>
+
+      <p>But the more interesting outcome was what the consolidation enabled that wasn't possible before.</p>
+
+      <p>With three separate Freshdesk instances, there was no unified view of customer history across brands. A customer who had interacted with Brand A and Brand B had two separate records in two separate systems — agents couldn't see the full relationship, and there was no way to connect the dots.</p>
+
+      <p>In Zendesk, with a unified multi-brand environment, that customer has one record. Every interaction across every brand is visible in one timeline. Agents can see the full relationship. Routing logic can account for customer history across brands. Cross-brand reporting became possible for the first time.</p>
+
+      <p>The operational efficiency gains weren't incidental — they were the point. The migration wasn't just moving data. It was enabling a fundamentally better way to serve customers who engaged with multiple brands.</p>
+
+      <hr class="section-rule" id="lessons">
+
+      <h2>What this taught me about complex migrations</h2>
+
+      <p>I've done enough of these now to have a framework. A few things I'd tell anyone planning a non-trivial helpdesk migration:</p>
+
+      <p><strong>Audit before you architect.</strong> Don't design your migration approach until you understand both the source structure and the destination schema in detail. The complexity is always in the details you discover during the audit, not the ones you assumed going in.</p>
+
+      <p><strong>Never migrate directly to production.</strong> Test environment, test migration, stakeholder review, then production. Every time. At any scale. The 1,000-ticket test run caught four field mapping issues and two status translation errors that would have affected tens of thousands of records if we'd gone straight to production.</p>
+
+      <p><strong>Build in resumability from the start.</strong> Migrations fail. Networks drop. APIs hit limits. If your migration can't resume from the last successful record, you're either re-running everything or accepting data gaps. Both are unacceptable at scale.</p>
+
+      <p><strong>Log everything, validate everything, sign off on everything.</strong> Every batch has a source count and a destination count. Every discrepancy gets investigated. The client signs off on each phase before the next begins. This isn't bureaucracy — it's how you arrive at "zero data loss" with confidence rather than hope.</p>
+
+      <p>The tools that handle 95% of migrations exist and work well. It's the 5% — the multi-brand consolidations, the non-standard field structures, the migrations that need custom business logic — where you need an engineer who's done it before and can build what the situation actually requires.</p>
+
+      <p>That's the work I find most interesting. And it's the work that requires the most care.</p>
+
+    </div>
+
+    <div class="author-bio reveal">
+      <div class="author-bio-avatar"><img src="/images/rakibul.jpg" alt="Rakibul Islam" onerror="this.style.display='none';this.parentElement.textContent='RI'"></div>
+      <div>
+        <div class="author-bio-name">Md Rakibul Islam</div>
+        <div class="author-bio-creds">Zendesk Certified Admin · Migration Specialist · 230K+ Tickets Migrated</div>
+        <p>I've migrated complex helpdesk environments across Freshdesk, Zendesk, Salesforce, and custom systems — including multi-brand, multi-instance consolidations at scale. If you have a migration that off-the-shelf tools can't handle, this is what I do.</p>
+        <div class="author-bio-links">
+          <a href="/#contact" class="author-bio-link primary">Work with me →</a>
+          <a href="https://linkedin.com/in/rakibul" target="_blank" rel="noopener" class="author-bio-link">LinkedIn</a>
+          <a href="https://www.upwork.com/freelancers/~011b28a338e5c4dbf8" target="_blank" rel="noopener" class="author-bio-link">Upwork Profile</a>
+          <a href="/#blog" class="author-bio-link">More Articles</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-cta reveal">
+      <h3>Need a migration that can't afford to lose data?</h3>
+      <p>Whether it's 10,000 tickets or 230,000, I approach every migration the same way: full audit first, staged testing, zero assumptions, documented end to end. Fixed fee, clear timeline, no surprises.</p>
+      <div class="article-cta-btns">
+        <a href="/#contact" class="btn-accent">Book a Free Discovery Call <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="/#services" class="btn-outline">View Services</a>
+      </div>
+    </div>
+
+    <div class="comments-section">
+      <div class="comments-heading">Discussion</div>
+      <script src="https://giscus.app/client.js"
+        data-repo="rakib78/mri"
+        data-repo-id="5cd6845"
+        data-category="Announcements"
+        data-category-id="1226847795"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </div>
+  </article>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="footer-logo">Rakibul<span>.</span></a>
+    <ul class="footer-links">
+      <li><a href="/#services">Services</a></li><li><a href="/#results">Results</a></li><li><a href="/#about">About</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/#blog">Insights</a></li><li><a href="/#contact">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Md Rakibul Islam · mrakibulislam.com · Auckland, NZ</div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40),{passive:true});
+const progress=document.getElementById('readingProgress');
+window.addEventListener('scroll',()=>{const total=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight)-window.innerHeight;progress.style.width=Math.min((window.scrollY/total)*100,100)+'%';},{passive:true});
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const headings=document.querySelectorAll('.prose h2[id]');
+const tocLinks=document.querySelectorAll('#tocList a');
+const tocObs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){tocLinks.forEach(l=>l.classList.remove('active'));const a=document.querySelector(`#tocList a[href="#${e.target.id}"]`);if(a)a.classList.add('active');}}),{rootMargin:'-20% 0px -70% 0px'});
+headings.forEach(h=>tocObs.observe(h));
+const mobNav=document.getElementById('mobNav');
+function openMobile(){mobNav.classList.add('open');document.body.style.overflow='hidden';}
+function closeMobile(){mobNav.classList.remove('open');document.body.style.overflow='';}
+function copyLink(){navigator.clipboard.writeText(window.location.href).then(()=>{const el=document.getElementById('copyLinkText');el.textContent='Copied!';setTimeout(()=>el.textContent='Copy link',2000);});}
+</script>
+</body>
+</html>

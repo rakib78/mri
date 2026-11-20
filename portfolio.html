@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio — 100+ Projects | Rakibul Islam | Shopify, Zendesk, CRM & Web Development</title>
+<meta name="description" content="100+ live projects across Shopify Plus, Zendesk, HubSpot, WordPress, and custom PHP development. 13+ years. Clients across USA, AU, UK, NZ, EU. Explore Rakibul Islam's full project portfolio.">
+<meta name="keywords" content="Shopify portfolio, Zendesk portfolio, CRM developer portfolio, Shopify Plus developer NZ, WordPress developer, web development portfolio Auckland, HubSpot portfolio">
+<meta name="author" content="Md Rakibul Islam">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mrakibulislam.com/portfolio.html">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mrakibulislam.com/portfolio.html">
+<meta property="og:title" content="Portfolio — 100+ Projects | Rakibul Islam">
+<meta property="og:description" content="100+ live projects across Shopify Plus, Zendesk, HubSpot, WordPress, and custom development.">
+<meta property="og:image" content="https://mrakibulislam.com/og-image.jpg">
+
+<link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/images/site.webmanifest">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N41GCC5HKW"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N41GCC5HKW');</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:      #ffffff;
+  --bg2:     #f4f6fb;
+  --bg3:     #eef1f8;
+  --panel:   #ffffff;
+  --border:  rgba(18,22,42,0.1);
+  --white:   #12142a;
+  --silver:  #4b5165;
+  --smoke:   #6b7280;
+  --accent:  #3661f0;
+  --accent2: #5b80ff;
+  --coral:   #ff5b5b;
+  --grad:    linear-gradient(120deg,var(--accent),var(--coral));
+  --glow:    rgba(54,97,240,0.18);
+  --glow2:   rgba(54,97,240,0.07);
+  --btn-text:#fff;
+  --nav-h:   72px;
+  --max:     1300px;
+  --r:       10px;
+  --display: 'Sora',sans-serif;
+  --body-f:  'Plus Jakarta Sans',sans-serif;
+  --trans:   color 0.3s ease,background 0.3s ease,border-color 0.3s ease,opacity 0.3s ease,transform 0.3s ease;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:var(--body-f);background:var(--bg);color:var(--silver);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{color:var(--accent);text-decoration:none;transition:var(--trans);}
+a:hover{color:var(--accent2);}
+::selection{background:var(--accent);color:#fff;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px;}
+
+/* ── NAV ── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:var(--bg);border-bottom:1px solid var(--border);will-change:background;transition:background .35s ease,border-color .35s ease;}
+#nav.scrolled{background:rgba(13,13,13,.97);border-color:var(--border);}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem);height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:2rem;}
+.nav-logo{font-family:var(--display);font-size:1.05rem;font-weight:800;color:var(--white);letter-spacing:.04em;display:inline-flex;align-items:center;gap:.4rem;}
+.logo-dot{width:7px;height:7px;border-radius:50%;background:var(--grad);display:inline-block;}
+.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+.nav-links a{font-family:var(--display);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--smoke);position:relative;padding-bottom:2px;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--accent);transition:width .3s;}
+.nav-links a:hover{color:var(--white);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{font-family:var(--display);font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.62rem 1.4rem;background:var(--grad);color:#fff;border-radius:100px;box-shadow:0 8px 22px var(--glow);transition:transform .2s,box-shadow .2s;}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 28px var(--glow);color:#fff;}
+.mob-toggle{display:none;background:none;border:none;cursor:pointer;padding:.3rem;}
+.mob-toggle span{display:block;width:22px;height:1.5px;background:var(--silver);margin:5px 0;border-radius:2px;}
+.mob-nav{display:none;position:fixed;inset:0;background:var(--bg);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:2rem;}
+.mob-nav.open{display:flex;}
+.mob-nav a{font-family:var(--display);font-size:1.4rem;font-weight:700;color:var(--white);}
+.mob-nav a:hover{color:var(--accent);}
+.mob-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:var(--smoke);font-size:1.5rem;cursor:pointer;}
+
+/* ── HERO ── */
+.portfolio-hero{
+  min-height: 55vh;
+  display:flex;align-items:flex-end;
+  padding-top:calc(var(--nav-h) + 4rem);
+  padding-bottom:4rem;
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--border);
+}
+.portfolio-hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 60% at 15% 50%,rgba(54,97,240,.05) 0%,transparent 65%),
+    radial-gradient(ellipse 50% 50% at 85% 30%,rgba(255,91,91,.03) 0%,transparent 60%);
+  pointer-events:none;
+}
+/* subtle grid */
+.portfolio-hero::after{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(18,22,42,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(18,22,42,.04) 1px,transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none;
+}
+.hero-wrap{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem);width:100%;}
+.hero-grid-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center;}
+.hero-eyebrow{font-family:var(--display);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem;}
+.hero-eyebrow::before{content:'';width:2rem;height:1px;background:var(--accent);}
+.hero-title{font-family:var(--display);font-size:clamp(2.8rem,7vw,5.5rem);font-weight:800;color:var(--white);line-height:1.05;letter-spacing:-.02em;margin-bottom:1.5rem;}
+.hero-title span{color:var(--accent);}
+.hero-desc{font-size:1.1rem;color:var(--silver);max-width:620px;line-height:1.8;margin-bottom:2.5rem;}
+.hero-stats{display:flex;gap:3rem;flex-wrap:wrap;}
+.hero-stat-num{font-family:var(--display);font-size:2.2rem;font-weight:800;color:var(--white);line-height:1;}
+.hero-stat-num sub{font-size:1.1rem;color:var(--accent);}
+.hero-stat-label{font-family:var(--display);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--smoke);margin-top:.25rem;}
+.hero-logocloud{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:2.1rem;}
+.hlc-label{font-family:var(--display);font-size:.64rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--smoke);margin-bottom:1.4rem;text-align:center;line-height:1.5;}
+.hlc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;}
+.hlc-item{aspect-ratio:1;background:#fff;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;padding:.8rem;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+.hlc-item:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(18,22,42,.08);border-color:rgba(54,97,240,.3);}
+.hlc-item img{width:100%;height:100%;object-fit:contain;filter:grayscale(1) opacity(.55);transition:filter .25s ease;}
+.hlc-item:hover img{filter:none;}
+.hlc-fallback{display:none;align-items:center;justify-content:center;width:100%;height:100%;font-family:var(--display);font-size:.62rem;font-weight:800;color:var(--smoke);text-align:center;}
+
+/* ── FILTER BAR ── */
+.filter-bar{position:sticky;top:var(--nav-h);z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:.9rem 0;}
+.filter-inner{max-width:var(--max);margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem);display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;}
+.filter-btn{font-family:var(--display);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.45rem 1.1rem;border-radius:100px;border:1px solid var(--border);background:transparent;color:var(--smoke);cursor:pointer;transition:var(--trans);}
+.filter-btn:hover{border-color:rgba(212,175,55,.4);color:var(--white);}
+.filter-btn.active{background:var(--grad);border-color:transparent;color:#fff;}
+.filter-count{font-family:var(--display);font-size:.6rem;font-weight:700;color:var(--smoke);margin-left:auto;}
+
+/* ── SECTION TITLES ── */
+.section-title-row{max-width:var(--max);margin:0 auto;padding:3.5rem clamp(1.25rem,5vw,3rem) 1.5rem;display:flex;align-items:center;gap:1.2rem;}
+.section-title-label{font-family:var(--display);font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);white-space:nowrap;}
+.section-title-line{flex:1;height:1px;background:var(--border);}
+.section-title-count{font-family:var(--display);font-size:.65rem;font-weight:700;color:var(--smoke);}
+
+/* ── PROJECT GRID ── */
+.projects-wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem) 2rem;}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;}
+
+/* ── PROJECT CARD ── */
+.project-card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  overflow:hidden;
+  transition:border-color .3s,transform .3s,box-shadow .3s;
+  position:relative;
+  cursor:default;
+}
+.project-card:hover{border-color:rgba(54,97,240,.35);transform:translateY(-4px);box-shadow:0 20px 44px rgba(18,22,42,.1);}
+.project-card[data-url]:hover{cursor:pointer;}
+
+/* thumbnail */
+.card-thumb{
+  width:100%;aspect-ratio:16/9;
+  background:var(--bg3);
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--border);
+}
+.card-thumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s ease,opacity .3s;}
+.project-card:hover .card-thumb img{transform:scale(1.04);}
+.card-thumb-fallback{
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-size:1.5rem;font-weight:800;
+  color:rgba(54,97,240,.3);letter-spacing:-.02em;
+  background:linear-gradient(135deg,var(--bg3) 0%,var(--panel) 100%);
+}
+/* category badge on thumb */
+.card-cat-badge{
+  position:absolute;top:.75rem;left:.75rem;
+  font-family:var(--display);font-size:.55rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:.28rem .7rem;border-radius:100px;
+}
+.badge-shopify{background:#2f6e37;color:#fff;border:1px solid #2f6e37;}
+.badge-zendesk{background:#0376c5;color:#fff;border:1px solid #0376c5;}
+.badge-wordpress{background:#21759b;color:#fff;border:1px solid #21759b;}
+.badge-php{background:#5b5fa6;color:#fff;border:1px solid #5b5fa6;}
+.badge-crm{background:var(--accent);color:#fff;border:1px solid var(--accent);}
+
+/* external link icon on hover */
+.card-link-icon{
+  position:absolute;top:.75rem;right:.75rem;
+  width:28px;height:28px;background:var(--grad);border-radius:100px;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .25s;
+}
+.project-card:hover .card-link-icon{opacity:1;}
+.card-link-icon svg{color:#fff;}
+
+/* card body */
+.card-body{padding:1.2rem 1.3rem 1.4rem;}
+.card-name{font-family:var(--display);font-size:.9rem;font-weight:700;color:var(--white);margin-bottom:.3rem;line-height:1.3;}
+.card-domain{font-family:var(--display);font-size:.6rem;font-weight:600;letter-spacing:.06em;color:var(--smoke);margin-bottom:.75rem;}
+.card-desc{font-size:.82rem;color:var(--silver);line-height:1.6;margin-bottom:.85rem;}
+.card-tags{display:flex;flex-wrap:wrap;gap:.35rem;}
+.card-tag{font-family:var(--display);font-size:.55rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.22rem .55rem;border-radius:3px;background:var(--bg3);border:1px solid var(--border);color:var(--smoke);}
+
+/* ── ZENDESK SECTION — wider cards ── */
+.zendesk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.25rem;}
+.zendesk-card{
+  background:var(--panel);border:1px solid var(--border);border-radius:var(--r);
+  padding:1.6rem;display:flex;flex-direction:column;gap:1rem;
+  transition:border-color .3s,transform .3s;
+  position:relative;overflow:hidden;
+}
+.zendesk-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#0376c5,rgba(3,118,197,0));transform:scaleX(0);transform-origin:left;transition:transform .35s;}
+.zendesk-card:hover{border-color:rgba(3,118,197,.4);transform:translateY(-3px);}
+.zendesk-card:hover::before{transform:scaleX(1);}
+.zd-header{display:flex;align-items:center;gap:.85rem;}
+.zd-icon{width:40px;height:40px;background:rgba(3,118,197,.1);border:1px solid rgba(3,118,197,.2);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.zd-icon svg{color:#0376c5;}
+.zd-name{font-family:var(--display);font-size:.92rem;font-weight:700;color:var(--white);line-height:1.2;}
+.zd-url{font-family:var(--display);font-size:.6rem;color:var(--smoke);margin-top:.15rem;}
+.zd-desc{font-size:.85rem;color:var(--silver);line-height:1.65;}
+.zd-tags{display:flex;flex-wrap:wrap;gap:.35rem;}
+.zd-tag{font-family:var(--display);font-size:.55rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.22rem .55rem;border-radius:3px;background:rgba(3,118,197,.08);border:1px solid rgba(3,118,197,.18);color:#0376c5;}
+.zd-link{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--display);font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0376c5;margin-top:auto;transition:var(--trans);}
+.zd-link:hover{color:#38a7f7;gap:.65rem;}
+
+/* ── CTA BAND ── */
+.cta-band{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:5rem 0;margin-top:5rem;position:relative;overflow:hidden;}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 50% 50%,rgba(54,97,240,.05) 0%,transparent 65%);}
+.cta-band-inner{max-width:800px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem);text-align:center;position:relative;z-index:1;}
+.cta-band-label{font-family:var(--display);font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem;}
+.cta-band-title{font-family:var(--display);font-size:clamp(2rem,5vw,3.2rem);font-weight:800;color:var(--white);line-height:1.1;letter-spacing:-.02em;margin-bottom:1.25rem;}
+.cta-band-sub{font-size:1.05rem;color:var(--silver);line-height:1.8;margin-bottom:2.5rem;max-width:560px;margin-left:auto;margin-right:auto;}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-primary{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--display);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.9rem 2.1rem;background:var(--grad);color:#fff;border-radius:100px;transition:transform .2s,box-shadow .3s;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px var(--glow);color:#fff;}
+.btn-outline{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--display);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.9rem 2.1rem;background:transparent;border:1px solid var(--border);color:var(--smoke);border-radius:100px;transition:var(--trans);}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);padding:3rem 0;}
+.footer-inner{max-width:var(--max);margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+.footer-logo{font-family:var(--display);font-size:1rem;font-weight:800;color:var(--white);display:inline-flex;align-items:center;gap:.4rem;}
+.footer-logo span{color:var(--accent);}
+.footer-links{display:flex;gap:1.75rem;list-style:none;flex-wrap:wrap;}
+.footer-links a{font-family:var(--display);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--smoke);transition:var(--trans);}
+.footer-links a:hover{color:var(--accent);}
+.footer-copy{font-family:var(--display);font-size:.6rem;font-weight:500;letter-spacing:.04em;color:var(--smoke);}
+
+/* ── HIDDEN (filtered out) ── */
+.project-card.hidden,.zendesk-card.hidden{display:none;}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);}
+.reveal.in{opacity:1;transform:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){.projects-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));}.zendesk-grid{grid-template-columns:1fr;}}
+@media(max-width:768px){.nav-links,.nav-cta{display:none;}.mob-toggle{display:block;}.hero-stats{gap:2rem;}.footer-inner{flex-direction:column;align-items:flex-start;}.projects-grid{grid-template-columns:1fr 1fr;}.hero-grid-layout{grid-template-columns:1fr;gap:2rem;}.hlc-grid{grid-template-columns:repeat(4,1fr);}}
+@media(max-width:480px){.projects-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- Mobile nav -->
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" onclick="closeMobile()">✕</button>
+  <a href="/">Home</a>
+  <a href="/#services" onclick="closeMobile()">Services</a>
+  <a href="/#results" onclick="closeMobile()">Results</a>
+  <a href="/#about" onclick="closeMobile()">About</a>
+  <a href="/pricing.html" onclick="closeMobile()">Pricing</a>
+  <a href="/#blog" onclick="closeMobile()">Insights</a>
+  <a href="/#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- Nav -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span class="logo-dot"></span>Rakibul<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#results">Results</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/pricing.html">Pricing</a></li>
+      <li><a href="/#blog">Insights</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <a href="/#contact" class="nav-cta">Book a Call</a>
+    <button class="mob-toggle" onclick="openMobile()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="portfolio-hero">
+  <div class="hero-wrap">
+    <div class="hero-grid-layout">
+      <div class="hero-content">
+        <div class="hero-eyebrow reveal">Full Project Portfolio</div>
+        <h1 class="hero-title reveal" style="transition-delay:.08s">
+          100+ projects.<br><span>13 years.</span><br>Real results.
+        </h1>
+        <p class="hero-desc reveal" style="transition-delay:.16s">Shopify Plus stores, Zendesk support systems, HubSpot automations, WordPress platforms, and custom PHP applications — built for clients across USA, Australia, UK, South Africa, and New Zealand.</p>
+        <div class="hero-stats reveal" style="transition-delay:.24s">
+          <div><div class="hero-stat-num">100<sub>+</sub></div><div class="hero-stat-label">Projects delivered</div></div>
+          <div><div class="hero-stat-num">21K<sub>+</sub></div><div class="hero-stat-label">Upwork hours</div></div>
+          <div><div class="hero-stat-num">13<sub>+</sub></div><div class="hero-stat-label">Years experience</div></div>
+          <div><div class="hero-stat-num">100<sub>%</sub></div><div class="hero-stat-label">Job Success Score</div></div>
+        </div>
+      </div>
+      <div class="hero-logocloud reveal" style="transition-delay:.32s">
+        <div class="hlc-label">Platforms &amp; tech stack<br>used for clients over 13 years</div>
+        <div class="hlc-grid">
+          <div class="hlc-item"><img loading="lazy" src="https://cdn.worldvectorlogo.com/logos/shopify.svg" alt="Shopify" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="hlc-fallback">Shopify</span></div>
+          <div class="hlc-item"><img loading="lazy" src="https://cdn.worldvectorlogo.com/logos/zendesk-1.svg" alt="Zendesk" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="hlc-fallback">Zendesk</span></div>
+          <div class="hlc-item"><img loading="lazy" src="https://cdn.worldvectorlogo.com/logos/hubspot.svg" alt="HubSpot" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="hlc-fallback">HubSpot</span></div>
+          <div class="hlc-item"><img loading="lazy" src="https://cdn.worldvectorlogo.com/logos/wordpress-icon.svg" alt="WordPress" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="hlc-fallback">WordPress</span></div>
+          <div class="hlc-item"><img loading="lazy" src="https://cdn.worldvectorlogo.com/logos/php.svg" alt="PHP" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="hlc-fallback">PHP</span></div>
+          <div class="hlc-item"><img loading="lazy" src="https://cdn.worldvectorlogo.com/logos/woocommerce.svg" alt="WooCommerce" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="hlc-fallback">WooCommerce</span></div>
+          <div class="hlc-item"><img loading="lazy" src="https://cdn.worldvectorlogo.com/logos/mysql-6.svg" alt="MySQL" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="hlc-fallback">MySQL</span></div>
+          <div class="hlc-item"><img loading="lazy" src="https://cdn.worldvectorlogo.com/logos/klaviyo.svg" alt="Klaviyo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="hlc-fallback">Klaviyo</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Filter bar -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-btn active" data-filter="all" onclick="filterProjects(this,'all')">All Projects</button>
+    <button class="filter-btn" data-filter="shopify" onclick="filterProjects(this,'shopify')">Shopify &amp; eCommerce</button>
+    <button class="filter-btn" data-filter="zendesk" onclick="filterProjects(this,'zendesk')">Zendesk CX</button>
+    <button class="filter-btn" data-filter="wordpress" onclick="filterProjects(this,'wordpress')">WordPress</button>
+    <button class="filter-btn" data-filter="php" onclick="filterProjects(this,'php')">Custom PHP &amp; API</button>
+    <span class="filter-count" id="filterCount">Showing all projects</span>
+  </div>
+</div>
+
+<!-- ══ SHOPIFY SECTION ══ -->
+<div class="section-title-row" id="sec-shopify">
+  <span class="section-title-label">Shopify &amp; eCommerce</span>
+  <div class="section-title-line"></div>
+  <span class="section-title-count">Featured stores</span>
+</div>
+
+<div class="projects-wrap">
+  <div class="projects-grid" id="shopifyGrid">
+
+    <!-- DYLN -->
+    <div class="project-card reveal" data-cat="shopify" data-url="https://www.dyln.co" onclick="openProject('https://www.dyln.co')">
+      <div class="card-thumb">
+        <img src="/images/portfolio/dyln-co.jpg" alt="DYLN" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'card-thumb-fallback\'>DYLN</div>'">
+        <span class="card-cat-badge badge-shopify">Shopify Plus</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">DYLN</div>
+        <div class="card-domain">dyln.co · Irvine, USA</div>
+        <div class="card-desc">Full Shopify Plus build post-Kickstarter. 300K+ customers, 7-year engagement. Zendesk + subscription + 3PL integrations. 30% revenue lift via SEO &amp; Meta.</div>
+        <div class="card-tags"><span class="card-tag">Shopify Plus</span><span class="card-tag">Subscription</span><span class="card-tag">3PL</span><span class="card-tag">Zendesk Sync</span></div>
+      </div>
+    </div>
+
+    <!-- Pair of Thieves -->
+    <div class="project-card reveal" data-cat="shopify" data-url="https://pairofthieves.com" onclick="openProject('https://pairofthieves.com')">
+      <div class="card-thumb">
+        <img src="/images/portfolio/pairofthieves-com.jpg" alt="Pair of Thieves" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'card-thumb-fallback\'>POT</div>'">
+        <span class="card-cat-badge badge-shopify">Shopify Plus</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Pair of Thieves</div>
+        <div class="card-domain">pairofthieves.com · USA</div>
+        <div class="card-desc">Custom Shopify Plus theme development, performance optimisation, and conversion-focused storefront for a major US apparel DTC brand.</div>
+        <div class="card-tags"><span class="card-tag">Shopify Plus</span><span class="card-tag">Custom Theme</span><span class="card-tag">CRO</span></div>
+      </div>
+    </div>
+
+    <!-- TAFT Clothing -->
+    <div class="project-card reveal" data-cat="shopify" data-url="https://taftclothing.com" onclick="openProject('https://taftclothing.com')">
+      <div class="card-thumb">
+        <img src="/images/portfolio/taftclothing-com.jpg" alt="TAFT Clothing" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'card-thumb-fallback\'>TAFT</div>'">
+        <span class="card-cat-badge badge-shopify">Shopify Plus</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">TAFT Clothing</div>
+        <div class="card-domain">taftclothing.com · USA</div>
+        <div class="card-desc">Shopify Plus development for a premium handcrafted footwear brand. Custom theme, performance-tuned storefront, and product page optimisation.</div>
+        <div class="card-tags"><span class="card-tag">Shopify Plus</span><span class="card-tag">Luxury DTC</span><span class="card-tag">Custom Liquid</span></div>
+      </div>
+    </div>
+
+    <!-- Sol-ti -->
+    <div class="project-card reveal" data-cat="shopify" data-url="https://solti.com" onclick="openProject('https://solti.com')">
+      <div class="card-thumb">
+        <img src="/images/portfolio/solti-com.jpg" alt="Sol-ti" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'card-thumb-fallback\'>SOL-TI</div>'">
+        <span class="card-cat-badge badge-shopify">Shopify</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Sol-ti</div>
+        <div class="card-domain">solti.com · San Diego, USA</div>
+        <div class="card-desc">Shopify storefront for an organic living beverage brand. Custom theme, subscription integration, and conversion-focused product pages.</div>
+        <div class="card-tags"><span class="card-tag">Shopify</span><span class="card-tag">Subscription</span><span class="card-tag">Health &amp; Wellness</span></div>
+      </div>
+    </div>
+
+    <!-- George Stone Crab -->
+    <div class="project-card reveal" data-cat="shopify" data-url="https://www.georgestonecrab.com" onclick="openProject('https://www.georgestonecrab.com')">
+      <div class="card-thumb">
+        <img src="/images/portfolio/georgestonecrab-com.jpg" alt="George Stone Crab" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'card-thumb-fallback\'>GSC</div>'">
+        <span class="card-cat-badge badge-shopify">Shopify</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">George Stone Crab</div>
+        <div class="card-domain">georgestonecrab.com · Florida, USA</div>
+        <div class="card-desc">Premium seafood eCommerce store with custom shipping logic for perishables, gift options, and seasonal product management.</div>
+        <div class="card-tags"><span class="card-tag">Shopify</span><span class="card-tag">Custom Shipping</span><span class="card-tag">Food &amp; Beverage</span></div>
+      </div>
+    </div>
+
+    <!-- Sand by Saya -->
+    <div class="project-card reveal" data-cat="shopify" data-url="https://sandbysaya.com" onclick="openProject('https://sandbysaya.com')">
+      <div class="card-thumb">
+        <img src="/images/portfolio/sandbysaya-com.jpg" alt="Sand by Saya" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'card-thumb-fallback\'>SAYA</div>'">
+        <span class="card-cat-badge badge-shopify">Shopify</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Sand by Saya</div>
+        <div class="card-domain">sandbysaya.com</div>
+        <div class="card-desc">Fashion Shopify store with custom Liquid theme, lookbook features, and Instagram integration for a boutique clothing brand.</div>
+        <div class="card-tags"><span class="card-tag">Shopify</span><span class="card-tag">Fashion</span><span class="card-tag">Custom Theme</span></div>
+      </div>
+    </div>
+
+    <!-- Natural Dog -->
+    <div class="project-card reveal" data-cat="shopify" data-url="https://naturaldog.com" onclick="openProject('https://naturaldog.com')">
+      <div class="card-thumb">
+        <img src="/images/portfolio/naturaldog-com.jpg" alt="Natural Dog" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'card-thumb-fallback\'>NATDOG</div>'">
+        <span class="card-cat-badge badge-shopify">Shopify</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Natural Dog Company</div>
+        <div class="card-domain">naturaldog.com · USA</div>
+        <div class="card-desc">Pet wellness Shopify store with subscription products, Klaviyo email automation, and upsell flow engineering.</div>
+        <div class="card-tags"><span class="card-tag">Shopify</span><span class="card-tag">Subscription</span><span class="card-tag">Klaviyo</span></div>
+      </div>
+    </div>
+
+    <!-- Permaculture Planet -->
+    <div class="project-card reveal" data-cat="shopify" data-url="https://permacultureplanet.co" onclick="openProject('https://permacultureplanet.co')">
+      <div class="card-thumb">
+        <img src="/images/portfolio/permacultureplanet-co.jpg" alt="Permaculture Planet" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'card-thumb-fallback\'>PP</div>'">
+        <span class="card-cat-badge badge-shopify">Shopify</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Permaculture Planet</div>
+        <div class="card-domain">permacultureplanet.co</div>
+        <div class="card-desc">Sustainable goods Shopify store, custom theme build with blog integration and organic SEO-focused architecture.</div>
+        <div class="card-tags"><span class="card-tag">Shopify</span><span class="card-tag">SEO</span><span class="card-tag">Sustainability</span></div>
+      </div>
+    </div>
+
+    <!-- Circa Old Houses -->
+    <div class="project-card reveal" data-cat="shopify" data-url="https://circaoldhouses.com" onclick="openProject('https://circaoldhouses.com')">
+      <div class="card-thumb">
+        <img src="/images/portfolio/circaoldhouses-com.jpg" alt="Circa Old Houses" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'card-thumb-fallback\'>CIRCA</div>'">
+        <span class="card-cat-badge badge-shopify">Shopify</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Circa Old Houses</div>
+        <div class="card-domain">circaoldhouses.com · USA</div>
+        <div class="card-desc">Architectural antiques eCommerce store with custom catalogue and property listing hybrid design.</div>
+        <div class="card-tags"><span class="card-tag">Shopify</span><span class="card-tag">Antiques</span><span class="card-tag">Custom Catalogue</span></div>
+      </div>
+    </div>
+
+    <!-- Littil -->
+    <div class="project-card reveal" data-cat="shopify" data-url="https://www.littil.com.au" onclick="openProject('https://www.littil.com.au')">
+      <div class="card-thumb">
+        <img src="/images/portfolio/littil-com-au.jpg" alt="Littil" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'card-thumb-fallback\'>LITTIL</div>'">
+        <span class="card-cat-badge badge-shopify">Shopify</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Littil</div>
+        <div class="card-domain">littil.com.au · Australia</div>
+        <div class="card-desc">Australian Shopify store with custom theme, local payment gateway integration, and mobile-first design.</div>
+        <div class="card-tags"><span class="card-tag">Shopify</span><span class="card-tag">Australia</span><span class="card-tag">Mobile-First</span></div>
+      </div>
+    </div>
+
+    <!-- Event Bookings -->
+    <div class="project-card reveal" data-cat="shopify" data-url="https://www.eventbookings.com" onclick="openProject('https://www.eventbookings.com')">
+      <div class="card-thumb">
+        <img src="/images/portfolio/eventbookings-com.jpg" alt="Event Bookings" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'card-thumb-fallback\'>EB</div>'">
+        <span class="card-cat-badge badge-shopify">Shopify</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Event Bookings</div>
+        <div class="card-domain">eventbookings.com · Australia</div>
+        <div class="card-desc">eCommerce and event ticketing platform built on Shopify with custom booking flows and payment integration.</div>
+        <div class="card-tags"><span class="card-tag">Shopify</span><span class="card-tag">Ticketing</span><span class="card-tag">Custom Flow</span></div>
+      </div>
+    </div>
+
+    <!-- Stone Crab Wholesale -->
+    <div class="project-card reveal" data-cat="shopify" data-url="https://stonecrabwholesale.com" onclick="openProject('https://stonecrabwholesale.com')">
+      <div class="card-thumb">
+        <img src="/images/portfolio/stonecrabwholesale-com.jpg" alt="Stone Crab Wholesale" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'card-thumb-fallback\'>SCW</div>'">
+        <span class="card-cat-badge badge-shopify">Shopify</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Stone Crab Wholesale</div>
+        <div class="card-domain">stonecrabwholesale.com · Florida, USA</div>
+        <div class="card-desc">Wholesale seafood Shopify store with B2B pricing, bulk order management, and perishable shipping logic.</div>
+        <div class="card-tags"><span class="card-tag">Shopify</span><span class="card-tag">B2B Wholesale</span><span class="card-tag">Custom Pricing</span></div>
+      </div>
+    </div>
+
+  </div><!-- /shopifyGrid -->
+</div>
+
+<!-- ══ ZENDESK SECTION ══ -->
+<div class="section-title-row" id="sec-zendesk">
+  <span class="section-title-label">Zendesk CX Engineering</span>
+  <div class="section-title-line"></div>
+  <span class="section-title-count">Enterprise &amp; scale implementations</span>
+</div>
+
+<div class="projects-wrap">
+  <div class="zendesk-grid" id="zendeskGrid">
+
+    <!-- Upwork -->
+    <div class="zendesk-card reveal" data-cat="zendesk">
+      <div class="zd-header">
+        <div class="zd-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div><div class="zd-name">Upwork Inc.</div><div class="zd-url">support.upwork.com</div></div>
+      </div>
+      <div class="zd-desc">Enterprise Zendesk for a 1,000+ agent global operation processing 5M+ tickets/year. Built custom workflows, trigger chains, SLA frameworks, Salesforce + JIRA + Slack integrations via REST API. Trained 100+ agents. Reduced agent resolution time 35%.</div>
+      <div class="zd-tags"><span class="zd-tag">Enterprise</span><span class="zd-tag">1,000+ Agents</span><span class="zd-tag">5M+ Tickets/yr</span><span class="zd-tag">Salesforce API</span></div>
+      <a href="https://support.upwork.com" target="_blank" rel="noopener" class="zd-link">View help centre <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+    <!-- DYLN Support -->
+    <div class="zendesk-card reveal" data-cat="zendesk">
+      <div class="zd-header">
+        <div class="zd-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div><div class="zd-name">DYLN</div><div class="zd-url">support.dyln.co</div></div>
+      </div>
+      <div class="zd-desc">Full Zendesk CX build synced with Shopify fulfilment data to auto-route order tickets. Eliminated 40% of order-related support volume through smart triage and self-service Help Centre.</div>
+      <div class="zd-tags"><span class="zd-tag">Shopify Sync</span><span class="zd-tag">Auto-Routing</span><span class="zd-tag">Help Centre</span><span class="zd-tag">AI Deflection</span></div>
+      <a href="https://support.dyln.co" target="_blank" rel="noopener" class="zd-link">View support portal <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+    <!-- Yoco -->
+    <div class="zendesk-card reveal" data-cat="zendesk">
+      <div class="zd-header">
+        <div class="zd-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div><div class="zd-name">Yoco</div><div class="zd-url">yoco.zendesk.com</div></div>
+      </div>
+      <div class="zd-desc">Zendesk implementation for a leading African fintech and payment platform. Custom workflows for merchant support, SLA engineering, and multi-channel inbox configuration.</div>
+      <div class="zd-tags"><span class="zd-tag">Fintech</span><span class="zd-tag">SLA Engineering</span><span class="zd-tag">Multi-channel</span></div>
+      <a href="https://yoco.zendesk.com" target="_blank" rel="noopener" class="zd-link">View support portal <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+    <!-- Evolved Office -->
+    <div class="zendesk-card reveal" data-cat="zendesk">
+      <div class="zd-header">
+        <div class="zd-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div><div class="zd-name">Evolved Office</div><div class="zd-url">evolvedoffice.zendesk.com</div></div>
+      </div>
+      <div class="zd-desc">Guide Help Centre with AnswerBot AI deflection + Salesforce bi-directional integration for a digital marketing SaaS platform. Achieved 25% CSAT uplift via multilingual self-service.</div>
+      <div class="zd-tags"><span class="zd-tag">Guide / Help Centre</span><span class="zd-tag">AnswerBot AI</span><span class="zd-tag">Salesforce Sync</span></div>
+      <a href="https://evolvedoffice.zendesk.com" target="_blank" rel="noopener" class="zd-link">View support portal <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+    <!-- Charity: Water -->
+    <div class="zendesk-card reveal" data-cat="zendesk">
+      <div class="zd-header">
+        <div class="zd-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div><div class="zd-name">charity: water</div><div class="zd-url">support.charitywater.org</div></div>
+      </div>
+      <div class="zd-desc">Zendesk support configuration for a globally recognised non-profit. Donor-facing Help Centre, campaign-specific routing, and volunteer support workflow design.</div>
+      <div class="zd-tags"><span class="zd-tag">Non-Profit</span><span class="zd-tag">Donor Support</span><span class="zd-tag">Help Centre</span></div>
+      <a href="http://support.charitywater.org" target="_blank" rel="noopener" class="zd-link">View support portal <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+    <!-- Kano -->
+    <div class="zendesk-card reveal" data-cat="zendesk">
+      <div class="zd-header">
+        <div class="zd-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div><div class="zd-name">Kano Computing</div><div class="zd-url">help.kano.me</div></div>
+      </div>
+      <div class="zd-desc">Help Centre and Zendesk support system for a global coding education platform. Multi-product ticket routing, parent &amp; child user support flows, and knowledge base architecture.</div>
+      <div class="zd-tags"><span class="zd-tag">EdTech</span><span class="zd-tag">Multi-product</span><span class="zd-tag">Knowledge Base</span></div>
+      <a href="https://help.kano.me" target="_blank" rel="noopener" class="zd-link">View help centre <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+    <!-- Audien Hearing -->
+    <div class="zendesk-card reveal" data-cat="zendesk">
+      <div class="zd-header">
+        <div class="zd-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div><div class="zd-name">Audien Hearing</div><div class="zd-url">audienhearing.zendesk.com</div></div>
+      </div>
+      <div class="zd-desc">Full Zendesk configuration for a DTC hearing aid brand. Shopify integration, returns &amp; warranty ticket automation, and AI-assisted FAQ deflection.</div>
+      <div class="zd-tags"><span class="zd-tag">DTC</span><span class="zd-tag">Shopify Sync</span><span class="zd-tag">Returns Automation</span></div>
+      <a href="https://audienhearing.zendesk.com" target="_blank" rel="noopener" class="zd-link">View support portal <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+    <!-- ITJones -->
+    <div class="zendesk-card reveal" data-cat="zendesk">
+      <div class="zd-header">
+        <div class="zd-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div><div class="zd-name">IT Jones</div><div class="zd-url">support.itjones.com</div></div>
+      </div>
+      <div class="zd-desc">Zendesk CX setup for a managed IT services provider. Agent hierarchy, SLA tiers by client type, escalation workflows, and JIRA integration for dev handoffs.</div>
+      <div class="zd-tags"><span class="zd-tag">Managed IT</span><span class="zd-tag">SLA Tiers</span><span class="zd-tag">JIRA Integration</span></div>
+      <a href="https://support.itjones.com" target="_blank" rel="noopener" class="zd-link">View support portal <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+  </div><!-- /zendeskGrid -->
+</div>
+
+<!-- ══ WORDPRESS SECTION ══ -->
+<div class="section-title-row" id="sec-wordpress">
+  <span class="section-title-label">WordPress &amp; Web Platforms</span>
+  <div class="section-title-line"></div>
+  <span class="section-title-count">Custom builds &amp; theme development</span>
+</div>
+
+<div class="projects-wrap">
+  <div class="projects-grid" id="wordpressGrid">
+
+    <!-- Property Moose -->
+    <div class="project-card reveal" data-cat="wordpress" data-url="https://propertymoose.co.uk" onclick="openProject('https://propertymoose.co.uk')">
+      <div class="card-thumb">
+        <img src="/images/portfolio/propertymoose-co-uk.jpg" alt="Property Moose" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'card-thumb-fallback\'>PM</div>'">
+        <span class="card-cat-badge badge-wordpress">WordPress</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Property Moose</div>
+        <div class="card-domain">propertymoose.co.uk · UK</div>
+        <div class="card-desc">Built from scratch — crowdfunding real estate investment platform with custom assessment form plugin, investor portal, and property listing system.</div>
+        <div class="card-tags"><span class="card-tag">WordPress</span><span class="card-tag">Crowdfunding</span><span class="card-tag">Custom Plugin</span><span class="card-tag">PSD to WP</span></div>
+      </div>
+    </div>
+
+    <!-- Ozrock Excavations -->
+    <div class="project-card reveal" data-cat="wordpress" data-url="https://ozrockexcavations.com.au" onclick="openProject('https://ozrockexcavations.com.au')">
+      <div class="card-thumb">
+        <img src="/images/portfolio/ozrockexcavations-com-au.jpg" alt="Ozrock Excavations" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'card-thumb-fallback\'>ORE</div>'">
+        <span class="card-cat-badge badge-wordpress">WordPress</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Ozrock Excavations</div>
+        <div class="card-domain">ozrockexcavations.com.au · Australia</div>
+        <div class="card-desc">WordPress business site for an Australian excavation and civil works company. Custom theme, lead generation forms, and service area pages.</div>
+        <div class="card-tags"><span class="card-tag">WordPress</span><span class="card-tag">Lead Gen</span><span class="card-tag">Australia</span></div>
+      </div>
+    </div>
+
+    <!-- Brouwerij De Molen -->
+    <div class="project-card reveal" data-cat="wordpress" data-url="https://brouwerijdemolen.nl" onclick="openProject('https://brouwerijdemolen.nl')">
+      <div class="card-thumb">
+        <img src="/images/portfolio/brouwerijdemolen-nl.jpg" alt="Brouwerij de Molen" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'card-thumb-fallback\'>BDM</div>'">
+        <span class="card-cat-badge badge-wordpress">WordPress</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Brouwerij de Molen</div>
+        <div class="card-domain">brouwerijdemolen.nl · Netherlands</div>
+        <div class="card-desc">WordPress + jQuery/Ajax + WP-PODs build for a renowned Dutch craft brewery. Dynamic beer catalogue with multilingual support.</div>
+        <div class="card-tags"><span class="card-tag">WordPress</span><span class="card-tag">jQuery / Ajax</span><span class="card-tag">WP-PODs</span><span class="card-tag">Netherlands</span></div>
+      </div>
+    </div>
+
+    <!-- Cherry Energy Solutions -->
+    <div class="project-card reveal" data-cat="wordpress" data-url="https://www.cherryenergysolutions.com.au" onclick="openProject('https://www.cherryenergysolutions.com.au')">
+      <div class="card-thumb">
+        <img src="/images/portfolio/cherryenergysolutions-com-au.jpg" alt="Cherry Energy Solutions" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'card-thumb-fallback\'>CES</div>'">
+        <span class="card-cat-badge badge-wordpress">WordPress</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Cherry Energy Solutions</div>
+        <div class="card-domain">cherryenergysolutions.com.au · AU</div>
+        <div class="card-desc">WordPress corporate site for an Australian energy solutions company with lead capture, service showcases, and CRM integration.</div>
+        <div class="card-tags"><span class="card-tag">WordPress</span><span class="card-tag">Energy</span><span class="card-tag">CRM Integration</span></div>
+      </div>
+    </div>
+
+  </div><!-- /wordpressGrid -->
+</div>
+
+<!-- ══ CUSTOM PHP / API SECTION ══ -->
+<div class="section-title-row" id="sec-php">
+  <span class="section-title-label">Custom PHP &amp; API Development</span>
+  <div class="section-title-line"></div>
+  <span class="section-title-count">Bespoke builds &amp; API integrations</span>
+</div>
+
+<div class="projects-wrap" style="padding-bottom:4rem;">
+  <div class="projects-grid" id="phpGrid">
+
+    <!-- Aurelian Lending -->
+    <div class="project-card reveal" data-cat="php">
+      <div class="card-thumb">
+        <div class="card-thumb-fallback">AURELIAN</div>
+        <span class="card-cat-badge badge-php">PHP / Salesforce</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Aurelian Lending</div>
+        <div class="card-domain">aurelianlending.com · USA</div>
+        <div class="card-desc">Custom PHP / PSD-to-HTML lending platform with Salesforce API integration for loan assessment and pipeline management.</div>
+        <div class="card-tags"><span class="card-tag">PHP</span><span class="card-tag">Salesforce API</span><span class="card-tag">Custom Plugin</span><span class="card-tag">Fintech</span></div>
+      </div>
+    </div>
+
+    <!-- Real Estate MLS -->
+    <div class="project-card reveal" data-cat="php">
+      <div class="card-thumb">
+        <div class="card-thumb-fallback">MLS API</div>
+        <span class="card-cat-badge badge-php">PHP / MLS API</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">RESF — Real Estate Platform</div>
+        <div class="card-domain">resf.com · USA</div>
+        <div class="card-desc">Full MLS API integration for property listing, advanced search, and neighbourhood data. Custom WordPress build with real-time property data sync.</div>
+        <div class="card-tags"><span class="card-tag">MLS API</span><span class="card-tag">WordPress</span><span class="card-tag">Real Estate</span><span class="card-tag">Advanced Search</span></div>
+      </div>
+    </div>
+
+    <!-- Booking Tours -->
+    <div class="project-card reveal" data-cat="php" data-url="http://booking-tours.com" onclick="openProject('http://booking-tours.com')">
+      <div class="card-thumb">
+        <div class="card-thumb-fallback">TOURS</div>
+        <span class="card-cat-badge badge-php">WordPress / API</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Booking Tours</div>
+        <div class="card-domain">booking-tours.com</div>
+        <div class="card-desc">WordPress tour booking platform with custom Tour CMS API integration, availability calendars, and payment gateway.</div>
+        <div class="card-tags"><span class="card-tag">WordPress</span><span class="card-tag">Tour CMS API</span><span class="card-tag">Booking System</span></div>
+      </div>
+    </div>
+
+    <!-- KNGrid -->
+    <div class="project-card reveal" data-cat="php">
+      <div class="card-thumb">
+        <div class="card-thumb-fallback">KNGRID</div>
+        <span class="card-cat-badge badge-php">PHP / CI</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">KNGrid</div>
+        <div class="card-domain">kngrid.com</div>
+        <div class="card-desc">PHP CodeIgniter / PSD-to-HTML5/CSS3 custom web application with PayPal and Authorize.net payment integration.</div>
+        <div class="card-tags"><span class="card-tag">PHP CodeIgniter</span><span class="card-tag">PayPal</span><span class="card-tag">Authorize.net</span><span class="card-tag">Custom App</span></div>
+      </div>
+    </div>
+
+    <!-- Silverleaf Real Estate -->
+    <div class="project-card reveal" data-cat="php" data-url="http://silverleaf.com" onclick="openProject('http://silverleaf.com')">
+      <div class="card-thumb">
+        <div class="card-thumb-fallback">SILVERLEAF</div>
+        <span class="card-cat-badge badge-wordpress">WordPress</span>
+        <div class="card-link-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Silverleaf</div>
+        <div class="card-domain">silverleaf.com · Real Estate</div>
+        <div class="card-desc">Premium real estate WordPress platform with custom property listings, neighbourhood pages, and lead capture integration.</div>
+        <div class="card-tags"><span class="card-tag">WordPress</span><span class="card-tag">Real Estate</span><span class="card-tag">Custom Listings</span></div>
+      </div>
+    </div>
+
+    <!-- House WebProps -->
+    <div class="project-card reveal" data-cat="php">
+      <div class="card-thumb">
+        <div class="card-thumb-fallback">ZILLOW API</div>
+        <span class="card-cat-badge badge-php">WordPress / API</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">WebProps — Property Platform</div>
+        <div class="card-domain">house.webprops.net</div>
+        <div class="card-desc">WordPress real estate platform with Zillow API integration for live property valuations, listings, and market data.</div>
+        <div class="card-tags"><span class="card-tag">WordPress</span><span class="card-tag">Zillow API</span><span class="card-tag">Real Estate</span><span class="card-tag">Live Data</span></div>
+      </div>
+    </div>
+
+  </div><!-- /phpGrid -->
+</div>
+
+<!-- CTA band -->
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <div class="cta-band-label reveal">Ready to work together?</div>
+    <h2 class="cta-band-title reveal" style="transition-delay:.08s">Your project could be next.</h2>
+    <p class="cta-band-sub reveal" style="transition-delay:.14s">100+ projects delivered. 13 years of experience. Fixed fees, documented handovers, and 30-day post-launch support on every engagement.</p>
+    <div class="cta-btns reveal" style="transition-delay:.2s">
+      <a href="/#contact" class="btn-primary">Book a Free Discovery Call <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="/#services" class="btn-outline">View Services</a>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="footer-logo"><span class="logo-dot"></span>Rakibul<span>.</span></a>
+    <ul class="footer-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#results">Results</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/pricing.html">Pricing</a></li>
+      <li><a href="/#blog">Insights</a></li>
+      <li><a href="/#contact">Contact</a></li>
+      <li><a href="https://linkedin.com/in/rakibul" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Md Rakibul Islam · mrakibulislam.com · Auckland, NZ</div>
+  </div>
+</footer>
+
+<script>
+/* ── Nav scroll ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 80), { passive: true });
+
+/* ── Reveal ── */
+const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ── Mobile menu ── */
+const mobNav = document.getElementById('mobNav');
+function openMobile() { mobNav.classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeMobile() { mobNav.classList.remove('open'); document.body.style.overflow = ''; }
+
+/* ── Open project URL ── */
+function openProject(url) { if (url) window.open(url, '_blank', 'noopener'); }
+
+/* ── Filter ── */
+function filterProjects(btn, cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const allCards = document.querySelectorAll('.project-card, .zendesk-card');
+  let visible = 0;
+
+  allCards.forEach(card => {
+    const cardCat = card.dataset.cat;
+    const show = cat === 'all' || cardCat === cat;
+    card.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+
+  // Show/hide section title rows
+  const sectionMap = { shopify: 'sec-shopify', zendesk: 'sec-zendesk', wordpress: 'sec-wordpress', php: 'sec-php' };
+  document.querySelectorAll('.section-title-row').forEach(row => {
+    if (cat === 'all') { row.style.display = ''; return; }
+    row.style.display = (row.id === sectionMap[cat]) ? '' : 'none';
+  });
+
+  const countEl = document.getElementById('filterCount');
+  countEl.textContent = cat === 'all' ? 'Showing all projects' : `${visible} project${visible !== 1 ? 's' : ''} shown`;
+}
+
+/* ── Stagger card reveals ── */
+document.querySelectorAll('.project-card, .zendesk-card').forEach((el, i) => {
+  el.style.transitionDelay = `${(i % 6) * 0.07}s`;
+});
+</script>
+</body>
+</html>
