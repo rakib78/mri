@@ -17,7 +17,7 @@ const SMTP_HOST       = 'smtp.hostinger.com';   // e.g. smtp.hostinger.com
 const SMTP_PORT       = 465;                     // 465 for SSL, 587 for TLS
 const SMTP_SECURE     = 'ssl';                   // 'ssl' or 'tls' — must match the port above
 const SMTP_USERNAME   = 'forms@mrakibulislam.com'; // the mailbox that sends the email
-const SMTP_PASSWORD   = 'H3ll0R@k!b';
+const SMTP_PASSWORD   = '********';
 
 const FROM_EMAIL      = 'forms@mrakibulislam.com'; // usually same as SMTP_USERNAME
 const FROM_NAME       = 'Md. Rakibul Islam';
